@@ -27,11 +27,17 @@ function App() {
 
   return (
     <>
-      <div className='App'>
+      <div className='container'>
         <div>
-          <div className=''>Quiz App</div>
+          <div className='quizTitle'>Quiz App</div>
           <div>
-            <div>{questions[0]}</div>
+            <div>{questions[0].questionText}</div>
+            {questions[0].answers.map((option,index)=>(
+              <button key={index}className='ans-btn'>{option.answerText}</button>
+            )
+            )}
+            <button className='next-btn'>Next</button>
+            <p className='ques-count'>Question  of {questions.length}</p>
           </div>
         </div>
       </div>
